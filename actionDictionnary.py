@@ -1,10 +1,12 @@
-def ADD(self) :
+def BOOST(self) :
 
 def CHOOSE(self):
 
 def DAMAGE(self) :
 
 def DESTROY(self) :
+
+def DISCARD(self):
 
 def DIVIDE(self) :
 
