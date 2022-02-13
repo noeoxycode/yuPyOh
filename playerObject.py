@@ -1,0 +1,1 @@
+creation de l objet player avec comme propriete HP ,deck(tableau de cartes) , hand(tableau de cartes), deffausse(tableau de cartes), board(tableau de cartes)
