@@ -1,1 +1,0 @@
-creation de l objet game avec comme propriete turn, player1, player2
