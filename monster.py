@@ -9,9 +9,9 @@ class Monstre:
         self.effectInt = effectInt.split(" ")
 
     def __str__(self):
-        return f'Nom : {self.name}' + f'\nAttack : {self.attack}' + f'\nDefence : {self.defence} ' + f'\nNiveau : {self.level}' + f'\nType : {self.types}'+ f'\nEffet : {self.effect}' + f'\n-----------------'
+        return f'Nom : {self.name}' + f'\nAttack : {self.attack}' + f'\nDefence : {self.defence} ' + f'\nNiveau : {self.level}' + f'\nType : {self.types}' + f'\nEffet : {self.effect}' + f'\n-----------------'
 
 
-m = Monstre("nono", 6,7,9,"guerrier", "yes","5")
+m = Monstre("nono", 6, 7, 9, "guerrier", "yes", "5")
 
 print(m)

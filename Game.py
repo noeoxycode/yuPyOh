@@ -1,5 +1,7 @@
 from Player import Player
 import random
+
+
 # Faire choisir le deck pour les deux joueurs / mélanger
 # Attribuer le deck choisi au joueur
 # Mélanger le deck
@@ -15,7 +17,8 @@ class Game:
         self.current_player = 1
         self.game_over = False
 
-        print(f'{self.player1.name} starting the game')
+    def display_hp(self):
+        print(f'{self.player1.name} and {self.player2.name} both are starting the game with {self.player1.HP} HP')
 
     def get_current_player(self):
         return self.player1 if self.current_player == 1 else self.player2
@@ -39,7 +42,7 @@ class Game:
 
     # boucle pour la partie, tant que gameOver est false
     def fight(self):
-
+        self.display_hp()
         while not self.player_did_lose():
 
             # action current player (Example

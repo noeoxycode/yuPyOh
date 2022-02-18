@@ -7,3 +7,5 @@ class Player:
         self.deck = []
         self.board = []
         self.discard = []
+
+
