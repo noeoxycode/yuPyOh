@@ -1,8 +1,4 @@
 class Magie:
-    name = ""
-    effect = ""
-    effectInt = ""
-
     def __init__(self, name, effect, effectInt=""):
         self.name = name
         self.effect = effect
@@ -12,18 +8,11 @@ class Magie:
         return f'Nom : {self.name}' + f'\nEffet : {self.effect}'
 
 
-
-
-
-
 magie = Magie("Nono", "Tornade")
 
 print(magie)
 
-#     def printi(self):
-#         print("Nom :", self.name)
-#         print("Effet :", self.effect)
-#
+
 #
 # deckList = []
 # deckList.append(Monstre("Avian", 1000, 1000, 3, "Guerrier"))
