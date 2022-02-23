@@ -1,0 +1,11 @@
+YuPyOh
+YuPyOh est un jeu de carte ou le but est de baisser les point de vie de son adversaire a 0.
+Pour cela vous faite affronter different monstre qui vons combatre et attaquer ceux de votre adversaire.
+Vous ne pouvez invoquer qu'un seul monstre par tour.
+Les monstre de niveau 5 a 6 necessite de sacrifier un de vos monstre pour les invoquer.
+Pareil pour les monstre avec un niveau supperieur a 6 qui necessite eux 2 sacrifices.
+Chaque tour vos monstres peuvent attaquer une fois, soir pour detruire un monstre adverse ou attaquer derectement votre adversaire.
+Lors d'une attaque, si l'attaque de votre monstre est superieur a la defence de l'adversaire, ce dernier est detruit et l'adversaire subit la difference en point de dommage.
+Pour vous aider dans votre bataille, vous pouvez utiliser des carte Magie qui pourrons renforcer vos monstre ou handicaper l'adversaire.
+Vous gagner si l'adversaire vois ses points de vie reduit a 0 ou si il commence son tour sans avoir de carte dans son deck.
+Bon duel a vous avanturier.

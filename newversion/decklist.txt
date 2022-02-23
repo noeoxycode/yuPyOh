@@ -1,0 +1,5 @@
+deck Heros:
+Jouer un deck composer de Heros qui combatte sous le signe de la justice aider par leurs fideles compagnons.
+Les cartes joues sur la mecanique des Guerriers qui de renforce avec de la magie.
+Et vous pouvez compter sur l'Homme-Oiseau a l'eclat lumineux pour finir la partit en s'aidant de tout les Heros battu au combat pour se renforcer
+
