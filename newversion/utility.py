@@ -35,6 +35,21 @@ def chooser(tab):
         c=input()
     return tab[int(c)-1]
 
+def checkWinner(game):
+    print("Victoire de ",end="")
+    if game.player1.HP<=0:
+        print(game.player2.name,"\nVous avez reduis les point de vie de votre adversaire a 0")
+        return
+    if game.player2.HP<=0:
+        print(game.player1.name,"\nVous avez reduis les point de vie de votre adversaire a 0")
+        return
+    if len(game.player1.deck)==0:
+        print(game.player2.name,"\nLe deck de votre adversaire ne contient plus de carte")
+        return
+    if len(game.player2.deck)==0:
+        print(game.player1.name,"\nLe deck de votre adversaire ne contient plus de carte")
+        return
+    print("partie annuler")
 
 def popi(effe,nb=1):
     for i in range(nb):

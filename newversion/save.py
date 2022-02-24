@@ -31,7 +31,6 @@ def load():
     with open("save.csv") as file:
         contenu=file.read()
     contenu=contenu.split(".!.\n")
-    print(contenu)
     for i in range(len(contenu)):
         contenu[i]=contenu[i].split("\n")
     for i in range(len(contenu)):

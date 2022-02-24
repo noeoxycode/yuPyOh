@@ -1,8 +1,6 @@
-1;3
+1;7
 titi;8000;tutu;8000
 .!.
-Monstre;Panthere noir;1300;1500;4;1300;1500;4;Bete
-Monstre;Colibri;800;1000;3;800;1000;3;Bete;Choisi un monstre que vous controlez, vous vous soignez de 200 x son niveau;CHOOSE allie.board HEAL* 200 target.LVL
 Monstre;Sparkman;1600;1200;4;1600;1200;4;Guerrier
 Monstre;Clayman;800;2000;3;800;2000;3;Guerrier
 Magie;Ravage de foudre;Si vous controler "Geant du tonnerre", detruit un monstre ennemie;CHOOSE allie.board.Geant@du@tonnerre CHOOSE ennemie.board DESTROY target
@@ -32,11 +30,11 @@ Magie;Soin de la justice;Vous soigne de 200 x nombre de carte dans la main;HEAL*
 Magie;Prison heroique;Choisisez un monstre ennemie, il pert un montant d'ATK egal a 100 x son niveau;CHOOSE ennemie.board MINUSA* target 100 target.LVL
 Monstre;Bubbleman;800;1200;3;800;1200;3;Guerrier
 Monstre;Necrombre;1500;1200;4;1500;1200;4;Guerrier
+Monstre;Panthere noir;1300;1500;4;1300;1500;4;Bete
+Monstre;Colibri;800;1000;3;800;1000;3;Bete;Choisi un monstre que vous controlez, vous vous soignez de 200 x son niveau;CHOOSE allie.board HEAL* 200 target.LVL
 .!.
 .!.
 .!.
-Monstre;Blazeman;1600;1600;4;1600;1600;4;Guerrier
-Monstre;Tranchant;2200;2000;6;2200;2000;6;Guerrier
 Monstre;Sparkman;1600;1200;4;1600;1200;4;Guerrier
 Magie;Super blocage;Choisisez un monstre guerrier que vous controlez, il gagne 800 DEF;CHOOSE allie.board.Guerrier BOOSTD target 800
 Monstre;Homme-Oiseau de feu;2100;1800;6;2100;1800;6;Guerrier;Choisi un monstre ennemie, gagne sa DEF en ATK;CHOOSE ennemie.board BOOSTA him target.DEF
@@ -66,6 +64,8 @@ Monstre;Flipper;900;1400;3;900;1400;3;Bete;Choisie un monstre de votre main et l
 Monstre;Ocean;1500;1700;4;1500;1700;4;Guerrier
 Monstre;Bubbleman;800;1200;3;800;1200;3;Guerrier
 Monstre;Avian;1000;1000;3;1000;1000;3;Guerrier
+Monstre;Blazeman;1600;1600;4;1600;1600;4;Guerrier
+Monstre;Tranchant;2200;2000;6;2200;2000;6;Guerrier
 .!.
 .!.
 .!.
