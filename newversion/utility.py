@@ -1,6 +1,6 @@
 from Magie import Magie
 from Monstre import Monstre
-import effect
+import effecting
 from colorama import Fore
 from random import randrange
 def findHolder(game, card):
@@ -78,8 +78,9 @@ def sacrifice(game,nb=1):
 def play(game,nb=0):
     player=game.getMain(game)
     if(type(player.hand[nb])==Magie):
-        if effect.effected(game,player.hand[nb])!=-1:
-            defausse(game,nb)
+        card=player.hand[nb]
+        if effecting.effected(game,card)!=-1:
+            defausse(game,findNumber(player.hand,card))
     elif(type(player.hand[nb])==Monstre):
         if game.nbSummon==0:
             res=1
@@ -98,7 +99,7 @@ def summon(game,nb):
     if len(player.board)<5:
         player.board.append(player.hand[nb])
         player.hand.pop(nb)
-        effect.effected(game,player.board[len(player.board)-1])                
+        effecting.effected(game,player.board[len(player.board)-1])                
     else:
         print(Fore.RED +"Vous n'avez plus de place pour invoquer un monstre.")
     

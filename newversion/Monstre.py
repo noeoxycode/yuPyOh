@@ -43,6 +43,5 @@ class Monstre:
             print("ATK de base :",self.bAttack,"  DEF de base :",self.bDefence)
         if self.effect !="":
             print("Effet :",self.effect)
-            print(self.effectInt)
     def copy(self):
         return Monstre(self.name,self.bAttack,self.bDefence,self.bLevel,self.types,self.effect,self.effectInt)

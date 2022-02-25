@@ -1,0 +1,30 @@
+Monstre;Flammeche;1200;0;3;1200;0;3;Feu;Choissiser un monstre Feu dans votre main, invoquez le;CHOOSE allie.hand.Feu SUMMON target
+Monstre;Goutte;600;600;3;600;600;3;Eau;Choissiser un monstre Eau dans votre main, invoquez le;CHOOSE allie.hand.Eau SUMMON target
+Monstre;Brize;300;900;3;300;900;3;Air;Choissiser un monstre Air dans votre main, invoquez le;CHOOSE allie.hand.Air SUMMON target
+Monstre;Eclat;900;300;3;900;300;3;Lumiere;Choissiser un monstre Lumiere dans votre main, invoquez le;CHOOSE allie.hand.Lumiere SUMMON target
+Monstre;Caillou;0;1200;3;0;1200;3;Terre;Choissiser un monstre Terre dans votre main, invoquez le;CHOOSE allie.hand.Terre SUMMON target
+Monstre;Pyromancien;1900;500;4;1900;500;4;Feu;Inflige 200 point de degat a votre adversaire;DAMAGE 200
+Monstre;Aquaman;1200;1200;4;1200;1200;4;Eau;Vous soigne de 400 HP;HEAL 400
+Monstre;Zephyr;900;1600;4;900;1600;4;Air
+Monstre;Lux;1600;900;4;1600;900;4;Lumiere;Choisissez un monstre ennemie, il perd 300 ATK;CHOOSE ennemie.board MINUSA target 300
+Monstre;Gaia;500;1900;4;500;1900;4;Terre;Choisissez un monstre allier, il gagne 300 DEF;CHOOSE allie.board BOOSTD target 300
+Monstre;Monarque de feu;2400;1200;6;2400;1200;6;Feu;Inflige 400 point de degat a votre adversaire;DAMAGE 400
+Monstre;Monarque aquatique;2400;1200;6;2400;1200;6;Eau;Vous soigne de 600 HP;HEAL 600
+Monstre;Monarque du vent;2400;1200;6;2400;1200;6;Air;Piocher une carte;DRAW 1
+Monstre;Monarque de la lumiere;2400;1200;6;2400;1200;6;Lumiere;Choisissez un monstre ennemie, il perd 500 ATK;CHOOSE ennemie.board MINUSA target 500
+Monstre;Monarque de la terre;2400;1200;6;2400;1200;6;Terre;Choisissez un monstre allier, il gagne 500 DEF;CHOOSE allie.board BOOSTD target 500
+Monstre;Magicien des elements;2100;1400;5;2100;1400;5;Magicien
+Monstre;Maitre meteo;1600;1100;4;1600;1100;4;Magicien
+Monstre;Manipulateur des elements;1100;1500;4;1100;1500;4;Magicien
+Monstre;Union des elements;2500;2000;7;2600;2000;7;Nature
+Monstre;Monarque de metal;2400;1200;6;2400;1200;6;Acier;Vous soigne de 100 HP le nombre de carte dans votre main;HEAL* allie.hand.nb 100
+Magie;Pouvoir : Flamme;Vous infliger 800 point de degat avotre adversaire;DAMAGE 800
+Magie;Pouvoir : Pluie;Vous vous soigner de 800 HP;HEAL 800
+Magie;Pouvoir : Air;Vous piochez une carte;DRAW 1
+Magie;Pouvoir : Photon;Cibler un monstre adverse; il pert 500 ATK;CHOOSE ennemie.board MINUSA 500
+Magie;Pouvoir : Pierre;Cibler un monstre allie; il gagne 500 DEF;CHOOSE allie.board BOOSTD 500
+Magie;Aprovitionnement;Si votre adversaire possede plus de monstre, invoque un monstre de votre main;IF ennemie.board.nb$>$allie.board.nb CHOOSE$allie.hand.Monstre$SUMMON$target
+Magie;Brassier hurlant;Choisissez un monstre Feu allie, le detruit et fait perdre 1000 HP a votre adversaire;CHOOSE allie.board.Feu DESTROY target DAMAGE 1000
+Magie;Eau purifiante;Choisissez un monstre Eau allie, le detruit et vous soigne de 1000 HP;CHOOSE allie.board.Eau DESTROY target HEAL 1000
+Magie;Eblouissement total;Choisissez un monstre Lumiere allie, choisissez un monstre ennemie, il pert 400 ATK et DEF;CHOOSE allie.board.Lumiere DESTROY target CHOOSE ennemie.board MINUSA target 400 MINUSD target 400
+Magie;Tornade accelerante;Choisissez un monstre Air allie, piochez 2 carte;CHOOSE allie.board.Air DESTROY target DRAW 2

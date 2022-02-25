@@ -3,3 +3,7 @@ Jouer un deck composer de Heros qui combatte sous le signe de la justice aider p
 Les cartes joues sur la mecanique des Guerriers qui de renforce avec de la magie.
 Et vous pouvez compter sur l'Homme-Oiseau a l'eclat lumineux pour finir la partit en s'aidant de tout les Heros battu au combat pour se renforcer
 
+deck Elementaire:
+Jouer un deck composer de Monstre qui sont composer d'element et sont lier a la nature.
+Les cartes joues sur la mecanique des differents type des Elementaire pour varier les effets.
+Et vous pouvez compter sur les carte Magie Pouvoir pour Utiliser avantages des différents elements

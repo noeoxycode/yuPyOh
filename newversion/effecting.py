@@ -8,7 +8,7 @@ def effected(game,card):
     if card.effectInt==['']:
         return
     effe=card.effectInt.split(" ")
-    while effe!=[]:
+    while effe!=[]and effe!=['']:
         if effect(game,card,player,effe)==-1:
             print(Fore.RED+"Condition impossible à remplir !")
             return -1
@@ -17,10 +17,9 @@ def effected(game,card):
 
 
 def effect(game,card,player,effe):
-    print(effe)
     if effe[0]=="HEAL":
         player.HP+=expression(effe[1],game,card)
-        utility.utility.popi(effe,2)
+        utility.popi(effe,2)
     elif effe[0]=="HEAL*":
         player.HP+=expression(effe[1],game,card)*expression(effe[2],game,card)
         utility.popi(effe,3)
@@ -50,18 +49,22 @@ def effect(game,card,player,effe):
     elif effe[0]=="MINUSA":
         cible=expression(effe[1],game,card)
         cible.attack-=expression(effe[2],game,card)
+        if cible.attack<0:cible.attack=0
         utility.popi(effe,3)
     elif effe[0]=="MINUSA*":
         cible=expression(effe[1],game,card)
         cible.attack-=expression(effe[2],game,card)*expression(effe[3],game,card)
+        if cible.attack<0:cible.attack=0
         utility.popi(effe,4)
     elif effe[0]=="MINUSD":
         cible=expression(effe[1],game,card)
         cible.defence-=expression(effe[2],game,card)
+        if cible.defence<0:cible.defence=0
         utility.popi(effe,3)
     elif effe[0]=="MINUSD*":
         cible=expression(effe[1],game,card)
         cible.defence-=expression(effe[2],game,card)*expression(effe[3],game,card)
+        if cible.defence<0:cible.defence=0
         utility.popi(effe,4)
     elif effe[0]=="CHOOSE":
         c=utility.chooser(expression(effe[1],game,card))

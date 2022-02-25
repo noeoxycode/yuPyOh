@@ -17,5 +17,6 @@ class Magie:
         self.effectInt=tab[2]
     def printi(self):
         print("Magie :",self.name)
+        print("Effet :",self.effect)
     def copy(self):
         return Magie(self.name,self.effect,self.effectInt)

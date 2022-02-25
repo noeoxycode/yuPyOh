@@ -1,71 +1,71 @@
-1;7
-titi;8000;tutu;8000
+1;4
+yugi;7600;kaiba;8000
 .!.
-Monstre;Sparkman;1600;1200;4;1600;1200;4;Guerrier
-Monstre;Clayman;800;2000;3;800;2000;3;Guerrier
-Magie;Ravage de foudre;Si vous controler "Geant du tonnerre", detruit un monstre ennemie;CHOOSE allie.board.Geant@du@tonnerre CHOOSE ennemie.board DESTROY target
 Monstre;Capitaine doree;1800;1000;4;1800;1000;4;Guerrier;Pioche une carte;DRAW 1
-Monstre;Blazeman;1600;1600;4;1600;1600;4;Guerrier
+Monstre;Clayman;800;2000;3;800;2000;3;Guerrier
+Monstre;Sparkman;1600;1200;4;1600;1200;4;Guerrier
+Magie;Destruction de Neos;Choisisez un "Neos" que vous controlez, il gagne 500 ATK, attaque tous les monstre ennemis, puis le detruit;CHOOSE allie.board.Neos IF ennemie.board.nb$>$0 BOOSTA$target$500$ATTACK$target$ennemie.board$DESTROY$target
+Magie;Dernier espoir;Detruit tous vos monstres et infliger 400 point de degat a votre adversaire par monstre detruit;DAMAGE* allie.board.nb 400 DESTROY allie.board
+Magie;Reigne animal;Choisisez une bete, elle gagne 1 niveau, 400 ATK et DEF;CHOOSE allie.board.Bete BOOSTA target 400 BOOSTD target 400 BOOSTL target 1
+Monstre;Necrombre;1500;1200;4;1500;1200;4;Guerrier
+Magie;Appel d'urgence;Pioche 1 carte si c'est un monstre guerrier pioche une carte de plus;DRAW 1 IF target.type$==$Guerrier DRAW$1
+Magie;Ravage de foudre;Si vous controler "Geant du tonnerre", detruit un monstre ennemie;CHOOSE allie.board.Geant@du@tonnerre CHOOSE ennemie.board DESTROY target
+Monstre;Geant du tonnerre;2400;2200;6;2400;2200;6;Guerrier
+Monstre;Airman;1800;1000;4;1800;1000;4;Guerrier;Donne 300 DEF a un monstre allie;CHOOSE allie.board.Guerrier BOOSTD target 300
+Monstre;Neos;2500;2200;7;2500;2200;7;Guerrier
 Magie;Super blocage;Choisisez un monstre guerrier que vous controlez, il gagne 800 DEF;CHOOSE allie.board.Guerrier BOOSTD target 800
+Monstre;Ocean;1500;1700;4;1500;1700;4;Guerrier
+Magie;Signal du hero;Choisisez un monstre que vous controlez, il gagne 500 ATK;CHOOSE allie.board BOOSTA target 500
+Magie;Prison heroique;Choisisez un monstre ennemie, il pert un montant d'ATK egal a 100 x son niveau;CHOOSE ennemie.board MINUSA* target 100 target.LVL
+Monstre;Chevalier Neos;2700;2300;7;2700;2300;7;Guerrier;Choisi un monstre ennemie, divise son ATK par 2;CHOOSE ennemie.board DIVIDEA target
 Monstre;Tranchant;2200;2000;6;2200;2000;6;Guerrier
-Monstre;Burstinatrix;1300;800;3;1300;800;3;Guerrier;Choisi un monstre ennemie, si sa DEF est inferieur a l'ATK de ce monstre, le detruit;CHOOSE ennemie.board IF target.DEF$<$him.ATK DESTROY$target
-Monstre;Flipper;900;1400;3;900;1400;3;Bete;Choisie un monstre de votre main et l'invoque specialement;CHOOSE allie.hand.Monstre SUMMON target
-Monstre;Neos;2500;2200;7;2500;2200;7;Guerrier
-Monstre;Chevalier Neos;2700;2300;7;2700;2300;7;Guerrier;Choisi un monstre ennemie, divise son ATK par 2;CHOOSE ennemie.board DIVIDEA target
-Monstre;Topitaupe;1400;1000;4;1400;1000;4;Bete
-Magie;Destruction de Neos;Choisisez un "Neos" que vous controlez, il gagne 500 ATK, attaque tous les monstre ennemis, puis le detruit;CHOOSE allie.board.Neos IF ennemie.board.nb$>$0 BOOSTA$target$500$ATTACK$target$ennemie.board$DESTROY$target
-Monstre;Ocean;1500;1700;4;1500;1700;4;Guerrier
-Magie;Appel d'urgence;Pioche 1 carte si c'est un monstre guerrier pioche une carte de plus;DRAW 1 IF target.type$==$Guerrier DRAW$1
-Magie;Reigne animal;Choisisez une bete, elle gagne 1 niveau, 400 ATK et DEF;CHOOSE allie.board.Bete BOOSTA target 400 BOOSTD target 400 BOOSTL target 1
-Monstre;Homme-Oiseau de feu;2100;1800;6;2100;1800;6;Guerrier;Choisi un monstre ennemie, gagne sa DEF en ATK;CHOOSE ennemie.board BOOSTA him target.DEF
-Magie;Signal du hero;Choisisez un monstre que vous controlez, il gagne 500 ATK;CHOOSE allie.board BOOSTA target 500
-Monstre;Geant du tonnerre;2400;2200;6;2400;2200;6;Guerrier
-Magie;Dernier espoir;Detruit tous vos monstres et infliger 400 point de degat a votre adversaire par monstre detruit;DAMAGE* allie.board.nb 400 DESTROY allie.board
-Magie;Rappel de secours;Choisisez un monstre guerrier que vous cimetiere, l'ajoute a votre main;CHOOSE allie.defause.Guerrier RESTORE target
-Monstre;Airman;1800;1000;4;1800;1000;4;Guerrier;Donne 300 DEF a un monstre allie;CHOOSE allie.board.Guerrier BOOSTD target 300
-.!.
-Monstre;Avian;1000;1000;3;1000;1000;3;Guerrier
-Monstre;Homme-Oiseau a l'eclat lumineux;2500;2500;8;2500;2500;8;Guerrier;Quant il est invoque, gagne 200 ATK par monstre Guerrier dans votre cimetiere;BOOSTA* him 200 allie.defause.Guerrier.nb
-Magie;Soin de la justice;Vous soigne de 200 x nombre de carte dans la main;HEAL* 200 allie.hand.nb
-Magie;Prison heroique;Choisisez un monstre ennemie, il pert un montant d'ATK egal a 100 x son niveau;CHOOSE ennemie.board MINUSA* target 100 target.LVL
-Monstre;Bubbleman;800;1200;3;800;1200;3;Guerrier
-Monstre;Necrombre;1500;1200;4;1500;1200;4;Guerrier
-Monstre;Panthere noir;1300;1500;4;1300;1500;4;Bete
-Monstre;Colibri;800;1000;3;800;1000;3;Bete;Choisi un monstre que vous controlez, vous vous soignez de 200 x son niveau;CHOOSE allie.board HEAL* 200 target.LVL
-.!.
-.!.
-.!.
-Monstre;Sparkman;1600;1200;4;1600;1200;4;Guerrier
-Magie;Super blocage;Choisisez un monstre guerrier que vous controlez, il gagne 800 DEF;CHOOSE allie.board.Guerrier BOOSTD target 800
-Monstre;Homme-Oiseau de feu;2100;1800;6;2100;1800;6;Guerrier;Choisi un monstre ennemie, gagne sa DEF en ATK;CHOOSE ennemie.board BOOSTA him target.DEF
-Monstre;Capitaine doree;1800;1000;4;1800;1000;4;Guerrier;Pioche une carte;DRAW 1
-Magie;Rappel de secours;Choisisez un monstre guerrier que vous cimetiere, l'ajoute a votre main;CHOOSE allie.defause.Guerrier RESTORE target
-Magie;Reigne animal;Choisisez une bete, elle gagne 1 niveau, 400 ATK et DEF;CHOOSE allie.board.Bete BOOSTA target 400 BOOSTD target 400 BOOSTL target 1
-Magie;Ravage de foudre;Si vous controler "Geant du tonnerre", detruit un monstre ennemie;CHOOSE allie.board.Geant@du@tonnerre CHOOSE ennemie.board DESTROY target
-Magie;Soin de la justice;Vous soigne de 200 x nombre de carte dans la main;HEAL* 200 allie.hand.nb
-Monstre;Neos;2500;2200;7;2500;2200;7;Guerrier
-Monstre;Homme-Oiseau a l'eclat lumineux;2500;2500;8;2500;2500;8;Guerrier;Quant il est invoque, gagne 200 ATK par monstre Guerrier dans votre cimetiere;BOOSTA* him 200 allie.defause.Guerrier.nb
-Monstre;Geant du tonnerre;2400;2200;6;2400;2200;6;Guerrier
-Monstre;Chevalier Neos;2700;2300;7;2700;2300;7;Guerrier;Choisi un monstre ennemie, divise son ATK par 2;CHOOSE ennemie.board DIVIDEA target
-Monstre;Burstinatrix;1300;800;3;1300;800;3;Guerrier;Choisi un monstre ennemie, si sa DEF est inferieur a l'ATK de ce monstre, le detruit;CHOOSE ennemie.board IF target.DEF$<$him.ATK DESTROY$target
-Magie;Appel d'urgence;Pioche 1 carte si c'est un monstre guerrier pioche une carte de plus;DRAW 1 IF target.type$==$Guerrier DRAW$1
-Monstre;Topitaupe;1400;1000;4;1400;1000;4;Bete
-Monstre;Panthere noir;1300;1500;4;1300;1500;4;Bete
-Monstre;Clayman;800;2000;3;800;2000;3;Guerrier
-Magie;Prison heroique;Choisisez un monstre ennemie, il pert un montant d'ATK egal a 100 x son niveau;CHOOSE ennemie.board MINUSA* target 100 target.LVL
-Monstre;Colibri;800;1000;3;800;1000;3;Bete;Choisi un monstre que vous controlez, vous vous soignez de 200 x son niveau;CHOOSE allie.board HEAL* 200 target.LVL
-Monstre;Airman;1800;1000;4;1800;1000;4;Guerrier;Donne 300 DEF a un monstre allie;CHOOSE allie.board.Guerrier BOOSTD target 300
-Monstre;Necrombre;1500;1200;4;1500;1200;4;Guerrier
-Magie;Destruction de Neos;Choisisez un "Neos" que vous controlez, il gagne 500 ATK, attaque tous les monstre ennemis, puis le detruit;CHOOSE allie.board.Neos IF ennemie.board.nb$>$0 BOOSTA$target$500$ATTACK$target$ennemie.board$DESTROY$target
-.!.
-Magie;Signal du hero;Choisisez un monstre que vous controlez, il gagne 500 ATK;CHOOSE allie.board BOOSTA target 500
-Magie;Dernier espoir;Detruit tous vos monstres et infliger 400 point de degat a votre adversaire par monstre detruit;DAMAGE* allie.board.nb 400 DESTROY allie.board
-Monstre;Flipper;900;1400;3;900;1400;3;Bete;Choisie un monstre de votre main et l'invoque specialement;CHOOSE allie.hand.Monstre SUMMON target
-Monstre;Ocean;1500;1700;4;1500;1700;4;Guerrier
 Monstre;Bubbleman;800;1200;3;800;1200;3;Guerrier
 Monstre;Avian;1000;1000;3;1000;1000;3;Guerrier
+Monstre;Colibri;800;1000;3;800;1000;3;Bete;Choisi un monstre que vous controlez, vous vous soignez de 200 x son niveau;CHOOSE allie.board HEAL* 200 target.LVL
+Monstre;Panthere noir;1300;1500;4;1300;1500;4;Bete
 Monstre;Blazeman;1600;1600;4;1600;1600;4;Guerrier
-Monstre;Tranchant;2200;2000;6;2200;2000;6;Guerrier
+Monstre;Homme-Oiseau a l'eclat lumineux;2500;2500;8;2500;2500;8;Guerrier;Quant il est invoque, gagne 200 ATK par monstre Guerrier dans votre cimetiere;BOOSTA* him 200 allie.defause.Guerrier.nb
+.!.
+Monstre;Flipper;900;1400;3;900;1400;3;Bete;Choisie un monstre de votre main et l'invoque specialement;CHOOSE allie.hand.Monstre SUMMON target
+Magie;Rappel de secours;Choisisez un monstre guerrier que vous cimetiere, l'ajoute a votre main;CHOOSE allie.defause.Guerrier RESTORE target
+Monstre;Homme-Oiseau de feu;2100;1800;6;2100;1800;6;Guerrier;Choisi un monstre ennemie, gagne sa DEF en ATK;CHOOSE ennemie.board BOOSTA him target.DEF
+Monstre;Topitaupe;1400;1000;4;1400;1000;4;Bete
+Magie;Soin de la justice;Vous soigne de 200 x nombre de carte dans la main;HEAL* 200 allie.hand.nb
+.!.
+Monstre;Burstinatrix;1300;800;3;1300;800;3;Guerrier;Choisi un monstre ennemie, si sa DEF est inferieur a l'ATK de ce monstre, le detruit;CHOOSE ennemie.board IF target.DEF$<$him.ATK DESTROY$target
 .!.
 .!.
+Magie;Eblouissement total;Choisissez un monstre Lumiere allie, choisissez un monstre ennemie, il pert 400 ATK et DEF;CHOOSE allie.board.Lumiere DESTROY target CHOOSE ennemie.board MINUSA target 400 MINUSD target 400
+Monstre;Monarque de metal;2400;1200;6;2400;1200;6;Acier;Vous soigne de 100 HP le nombre de carte dans votre main;HEAL* allie.hand.nb 100
+Monstre;Magicien des elements;2100;1400;5;2100;1400;5;Magicien
+Monstre;Brize;300;900;3;300;900;3;Air;Choissiser un monstre Air dans votre main, invoquez le;CHOOSE allie.hand.Air SUMMON target
+Monstre;Caillou;0;1200;3;0;1200;3;Terre;Choissiser un monstre Terre dans votre main, invoquez le;CHOOSE allie.hand.Terre SUMMON target
+Magie;Pouvoir : Pluie;Vous vous soigner de 800 HP;HEAL 800
+Monstre;Monarque de la lumiere;2400;1200;6;2400;1200;6;Lumiere;Choisissez un monstre ennemie, il perd 500 ATK;CHOOSE ennemie.board MINUSA target 500
+Magie;Pouvoir : Air;Vous piochez une carte;DRAW 1
+Monstre;Goutte;600;600;3;600;600;3;Eau;Choissiser un monstre Eau dans votre main, invoquez le;CHOOSE allie.hand.Eau SUMMON target
+Monstre;Maitre meteo;1600;1100;4;1600;1100;4;Magicien
+Monstre;Eclat;900;300;3;900;300;3;Lumiere;Choissiser un monstre Lumiere dans votre main, invoquez le;CHOOSE allie.hand.Lumiere SUMMON target
+Monstre;Union des elements;2500;2000;7;2600;2000;7;Nature
+Monstre;Lux;1600;900;4;1600;900;4;Lumiere;Choisissez un monstre ennemie, il perd 300 ATK;CHOOSE ennemie.board MINUSA target 300
+Monstre;Monarque du vent;2400;1200;6;2400;1200;6;Air;Piocher une carte;DRAW 1
+Monstre;Aquaman;1200;1200;4;1200;1200;4;Eau;Vous soigne de 400 HP;HEAL 400
+Magie;Tornade accelerante;Choisissez un monstre Air allie, piochez 2 carte;CHOOSE allie.board.Air DESTROY target DRAW 2
+Monstre;Gaia;500;1900;4;500;1900;4;Terre;Choisissez un monstre allier, il gagne 300 DEF;CHOOSE allie.board BOOSTD target 300
+Magie;Pouvoir : Pierre;Cibler un monstre allie; il gagne 500 DEF
+Monstre;Monarque aquatique;2400;1200;6;2400;1200;6;Eau;Vous soigne de 600 HP;HEAL 600
+Magie;Brassier hurlant;Choisissez un monstre Feu allie, le detruit et fait perdre 1000 HP a votre adversaire;CHOOSE allie.board.Feu DESTROY target DAMAGE 1000
+Magie;Pouvoir : Photon;Cibler un monstre adverse; il pert 500 ATK
+Magie;Aprovitionnement;Si votre adversaire possede plus de monstre, invoque un monstre de votre main;IF ennemie.board.nb$>$allie.board.nb CHOOSE$allie.hand.Monstre$SUMMON$target
+Magie;Pouvoir : Flamme;Vous infliger 800 point de degat avotre adversaire;DAMAGE 800
+.!.
+Monstre;Monarque de la terre;2400;1200;6;2400;1200;6;Terre;Choisissez un monstre allier, il gagne 500 DEF;CHOOSE allie.board BOOSTD target 500
+Magie;Eau purifiante;Choisissez un monstre Eau allie, le detruit et vous soigne de 1000 HP;CHOOSE allie.board.Eau DESTROY target HEAL 1000
+Monstre;Manipulateur des elements;1100;1500;4;1100;1500;4;Magicien
+Monstre;Pyromancien;1900;500;4;1900;500;4;Feu;Inflige 200 point de degat a votre adversaire;DAMAGE 200
+Monstre;Zephyr;900;1600;4;900;1600;4;Air
+.!.
+Monstre;Flammeche;1200;0;3;1200;0;3;Feu;Choissiser un monstre Feu dans votre main, invoquez le;CHOOSE allie.hand.Feu SUMMON target
+.!.
+Monstre;Monarque de feu;2400;1200;1200;2400;1200;6;Feu;Inflige 400 point de degat a votre adversaire;DAMAGE 400
 .!.
