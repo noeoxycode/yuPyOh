@@ -1,20 +1,31 @@
-"Avian", 1000, 1000, 3, "Guerrier"
-"Clayman", 800, 2000, 3, "Guerrier"
-"Burstinatrix", 1300, 800, 3, "Guerrier","Choisi un monstre ennemie, si sa DEF est inférieur à l'ATK de ce monstre, le détruit","CHOOSE ennemie IF cible.DEF < him.ATK DESTROY cible"
-"Bubbleman", 800, 1200, 3, "Guerrier"
-"Flipper", 900, 1400, 3, "Bete", "Choisie un monstre de votre main et l'invoque si c'est possible","CHOOSE hand SUMMON cible"
-"Colibri", 800, 1000, 3, "Bete","Choisi un monstre que vous controlez, vous vous soignez de 200 x son niveau","CHOOSE allie  SOIN* 200 allie.niveau"
-"Panthere noir", 1300, 1500, 4, "Bete"
-"Topitaupe", 1400, 1000, 4, "Bete"
-"Sparkman", 1600, 1200, 4, "Guerrier"
-"Nécrombre", 1500, 1200, 4, "Guerrier"
-"Airman", 1800, 1000, 4, "Guerrier", "Donne 300 DEF à un monstre allié", "CHOOSE allie ADD allie.DEF 300"
-"Capitaine dorée", 1800, 1000, 4, "Guerrier", "Pioche une carte", "DRAW 1"
-"Blazeman", 1600, 1600, 4, "Guerrier"
-"Ocean", 1500, 1700, 4, "Guerrier"
-"Tranchant", 2200, 2000, 6, "Guerrier"
-"Géant du tonnerre", 2400, 2200, 6, "Guerrier"
-"Homme-Oiseau de feu", 2100, 1800, 6, "Guerrier", "Choisi un monstre ennemie, gagne sa DEF en ATK","CHOOSE ennemie ADD him.ATK cible.DEF"
-"Néos", 2500, 2200, 7, "Guerrier"
-"Chevalier Néos", 2700, 2300, 7, "Guerrier", "Choisi un monstre ennemie, divise son ATK par 2","CHOOSE ennemie DIVIDE ennemie.ATK 2"
-"Homme-Oiseau à l'éclat lumineux", 2500, 2500, 8, "Guerrier","Quant il est invoqué, gagne 200 ATK par monstre Guerrier dans votre cimetière","ADD* him.ATK 200 cimetiere.guerrier"
+
+Monstre;Taia;1200;1300;3;1000;1000;3;Guerrier
+Monstre;Chunjun;1500;1200;3;800;1200;3;Guerrier
+Monstre;Longyuan;1300;100;3;1300;1600;3;Guerrier;Choisi un monstre ennemie, si sa DEF est superieur a l'ATK de ce monstre, le detruit;CHOOSE ennemie.board IF target.DEF$>$him.ATK DESTROY$target
+Monstre;Tinola;1600;1200;3;1400;1200;3;Guerrier
+Monstre;Nyami;800;800;3;1400;1400;3;Bete;Choisie un monstre de votre main et l'invoque specialement;CHOOSE allie.hand.Monstre SUMMON target
+Monstre;Orbitael;800;1000;3;800;1000;3;Bete;Choisi un monstre que vous controlez, vous vous soignez de 100 x son niveau;CHOOSE allie.board HEAL* 100 target.LVL
+Monstre;Fengli;1300;1500;4;1300;1500;4;Bete;vous vous soignez de 20 x son niveau;CHOOSE allie.board HEAL* 20 target.LVL
+Monstre;Cliquemiaulis;1400;1000;4;1400;1000;4;Bete
+Monstre;Mélusine Reptilia;1600;1200;4;1600;1200;4;Guerrier;Pioche une carte;DRAW 1
+Monstre;Démon de la Magiclé;1500;1200;4;1500;1200;4;Guerrier
+Monstre;Seiyaryu;1800;1000;4;1800;1000;4;Guerrier;Donne 200 ATK a un monstre allie;CHOOSE allie.board.Guerrier BOOSTA target 200
+Monstre;Hyozanryu doree;1800;1000;4;1800;1000;4;Guerrier;Pioche deux cartes;DRAW 1
+Monstre;Gigantes;1600;1600;4;1600;1600;4;Guerrier
+Monstre;Phalanx Draguinite;1500;1700;4;1500;1700;4;Guerrier
+Monstre;Lanceur Photon;2200;2000;6;2200;2000;6;Guerrier
+Monstre;Dame des ténèbres;2400;2200;6;2400;2200;6;Guerrier
+Monstre;Salamangrande;2100;1800;6;2100;1800;6;Guerrier;Choisi un monstre ennemie, gagne son ATK en DEF;CHOOSE ennemie.board BOOSTD him target.ATK
+Monstre;Draco Equiste;2200;7;2500;2200;7;Guerrier
+Monstre;Durandal;2700;2300;7;2700;2300;7;Guerrier;Choisi un monstre ennemie, divise sa DEF par 2;CHOOSE ennemie.board DIVIDED target
+Monstre;Wolflamme;2500;2500;8;2500;2500;8;Guerrier;Quant il est invoque, gagne 300 ATK par monstre Guerrier dans votre cimetiere;BOOSTA* him 300 allie.defause.Guerrier.nb
+Magie;Bras droit de l'interdit;Choisisez un monstre que vous controlez, il gagne 200 DEF;CHOOSE allie.board BOOSTD target 200
+Magie;Baton du Magicien;Pioche 1 carte si c'est un monstre guerrier pioche une carte de plus;DRAW 1 IF target.type$==$Guerrier DRAW$1
+Magie;Chef de Gaga;Vous soigne de 100 x nombre de carte dans la main;HEAL* 100 allie.hand.nb
+Magie;Copiechat;Si vous controler "Hyozanryu", detruit un monstre ennemie;CHOOSE allie.board.Geant@du@tonnerre CHOOSE ennemie.board DESTROY target
+Magie;Nekomusume Fantoruse;Detruit tous vos monstres et infliger 200 point de degat a votre adversaire par monstre detruit;DAMAGE* allie.board.nb 200 DESTROY allie.board
+Magie;Noble des Protecteurs du Tombeau;Choisisez une bete, elle gagne 1 niveau, 500 ATK et 200 DEF;CHOOSE allie.board.Bete BOOSTA target 500 BOOSTD target 200 BOOSTL target 1
+Magie;Noellia Gishki;Choisisez un monstre ennemie, il pert un montant d'ATK egal a 50 x son niveau;CHOOSE ennemie.board MINUSA* target 50 target.LVL
+Magie;Robe du Magicien;Choisisez un monstre guerrier que vous controlez, il gagne 600 ATK;CHOOSE allie.board.Guerrier BOOSTA target 600
+Magie;Roue de la Prophetie;Choisisez un monstre guerrier que vous cimetiere, l'ajoute a votre main;CHOOSE allie.defause.Guerrier RESTORE target
+Magie;Sorcier Astrographe;Choisisez un "Neos" que vous controlez, il gagne 700 ATK, attaque tous les monstre ennemis, puis le detruit;CHOOSE allie.board.Neos IF ennemie.board.nb$>$0 BOOSTA$target$700$ATTACK$target$ennemie.board$DESTROY$target
