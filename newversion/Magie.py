@@ -1,17 +1,9 @@
-class Magie:
-    name=""
-    effect=""
-    effectInt=""
-    types="Magie"
-    image=''
-    holder=""
+from newversion.card import Card
+
+
+class Magie(Card):
     def __init__(self, name,effect,effectInt=""):
-        self.name=name
-        self.effect=effect
-        if type(effectInt) is type([]):
-            self.effectInt=effectInt
-        else:
-            self.effectInt=effectInt.split(" ")
+        super().__init__(0, 0, name, "Magie", effect, effectInt)
     def __init__(self, tab):
         self.name=tab[0]
         self.effect=tab[1]

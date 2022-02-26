@@ -1,28 +1,20 @@
-class Monstre:
-    name=""
+from newversion.card import Card
+
+
+class Monstre(Card):
     attack=0
     defence=0
     bAttack=0
     bDefence=0
     level=0
     bLevel=0
-    types=""
-    effect=""
-    effectInt=""
-    holder=""
-    image=''
     canAttack=True
     def __init__(self, name="",attack=0,defence=0,level=0,types="",effect="",effectInt=""):
-        self.name = name
+        super().__init__(0, 0, name, types, effect, effectInt)
         self.attack = self.bAttack=attack
         self.bDefence=self.defence = defence
         self.level = self.bLevel=level
-        self.types = types
         self.effect = effect
-        if type(effectInt) is type([]):
-            self.effectInt=effectInt
-        else:
-            self.effectInt=effectInt.split(" ")
     def __init__(self, tab):
         self.name = tab[0]
         self.attack =int(tab[1])
