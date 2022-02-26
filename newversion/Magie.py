@@ -3,6 +3,7 @@ class Magie:
     effect=""
     effectInt=""
     types="Magie"
+    image=''
     holder=""
     def __init__(self, name,effect,effectInt=""):
         self.name=name

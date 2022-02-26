@@ -10,6 +10,7 @@ class Monstre:
     effect=""
     effectInt=""
     holder=""
+    image=''
     canAttack=True
     def __init__(self, name="",attack=0,defence=0,level=0,types="",effect="",effectInt=""):
         self.name = name
