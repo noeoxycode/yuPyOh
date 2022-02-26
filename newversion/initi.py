@@ -14,6 +14,7 @@ def run():
         initi.start(game)
         print("Debut de la partit")
     elif mode==2:
+        utility.holdingPlayer(game)
         print("Reprise de la partit")
     result=0
     while result!=-1 and result !=2:

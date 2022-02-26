@@ -1,4 +1,4 @@
-from newversion.card import Card
+from card import Card
 
 
 class Monstre(Card):
@@ -16,17 +16,19 @@ class Monstre(Card):
         self.level = self.bLevel=level
         self.effect = effect
     def __init__(self, tab):
-        self.name = tab[0]
+        if(len(tab))>8:
+            effect =tab[8]
+            effectInt=tab[9]
+        else:
+            effect=''
+            effectInt=''
+        super().__init__(0, 0, tab[0], tab[7], effect, effectInt)
         self.attack =int(tab[1])
         self.defence = int(tab[2])
         self.level=int(tab[3])
         self.bAttack=int(tab[4])
         self.bDefence= int(tab[5])
         self.bLevel=int(tab[6])
-        self.types = tab[7]
-        if(len(tab))>8:
-            self.effect =tab[8]
-            self.effectInt=tab[9]
     def printi(self):
         print("Monstre :",self.name)
         print("Holder :",self.holder)

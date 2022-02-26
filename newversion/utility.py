@@ -80,7 +80,7 @@ def play(game,nb=0):
     if(type(player.hand[nb])==Magie):
         card=player.hand[nb]
         if effecting.effected(game,card)!=-1:
-            defausse(game,findNumber(player.hand,card))
+            defausse(player,findNumber(player.hand,card))
     elif(type(player.hand[nb])==Monstre):
         if game.nbSummon==0:
             res=1
@@ -135,7 +135,19 @@ def limitHand(player):
         card=chooser(player.hand)
         defausse(player,findNumber(player.hand,card))
     pass
-    
+def holdingPlayer(game):
+    holdingCard(game.player1.deck,game.player1.name)
+    holdingCard(game.player1.hand,game.player1.name)
+    holdingCard(game.player1.board,game.player1.name)
+    holdingCard(game.player1.defause,game.player1.name)
+    holdingCard(game.player2.deck,game.player2.name)
+    holdingCard(game.player2.hand,game.player2.name)
+    holdingCard(game.player2.board,game.player2.name)
+    holdingCard(game.player2.defause,game.player2.name)
+def holdingCard(zone,player):
+    for i in zone:
+        i.holder=player
+
 def destroy(game,joueur,nbmonstre=0):
     if(type(joueur.board[nbmonstre])==Monstre):
         joueur.board[nbmonstre].attack=joueur.board[nbmonstre].bAttack

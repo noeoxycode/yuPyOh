@@ -7,7 +7,9 @@ def effected(game,card):
     effe=[]
     if card.effectInt==['']:
         return
-    effe=card.effectInt.split(" ")
+    effe=card.effectInt
+    if type(effe)!=list:
+        effe=effe.split(" ")
     while effe!=[]and effe!=['']:
         if effect(game,card,player,effe)==-1:
             print(Fore.RED+"Condition impossible à remplir !")
