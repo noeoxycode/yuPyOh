@@ -61,6 +61,7 @@ def turn(game):
             utility.chooser(b).printi()
         elif a=="exit":
             return -1
+    if len(player.hand)>7:utility.limitHand(player)
     game.endTurn(game)
     if a=="4":return 1
     if a=="5":return 2

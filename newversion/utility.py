@@ -124,10 +124,17 @@ def attack(game,nba=0,nbe=0):
     elif(dif<0):
         player.HP+=dif
                 
-def defausse(game,nb):    
-    player=game.getMain(game)
+def defausse(player,nb):
     player.defause.append(player.hand[nb])
     player.hand.pop(nb)
+
+def limitHand(player):
+    print("Limite de carte dans la main depasser")
+    for i in range(len(player.hand)-7):
+        print("Choissisez une carte a defausser")
+        card=chooser(player.hand)
+        defausse(player,findNumber(player.hand,card))
+    pass
     
 def destroy(game,joueur,nbmonstre=0):
     if(type(joueur.board[nbmonstre])==Monstre):
