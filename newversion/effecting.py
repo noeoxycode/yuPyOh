@@ -98,11 +98,11 @@ def effect(game,card,player,effe):
         utility.popi(effe,2)
     elif effe[0]=="DIVIDEA":
         cible=expression(effe[1],game,card)
-        cible.attack/=2
+        cible.attack=cible.attack//2
         utility.popi(effe,2)
     elif effe[0]=="DIVIDED":
         cible=expression(effe[1],game,card)
-        cible.defence/=2
+        cible.defence=cible.defence//2
         utility.popi(effe,2)
     elif effe[0]=="SUMMON":
         cible=expression(effe[1],game,card)
