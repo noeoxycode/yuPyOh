@@ -28,20 +28,20 @@ def chooser(tab):
     for i in range(len(tab)):
         print(i+1,":",tab[i].name,end=" | ")
     print()
-    print("Numeros de la carte choisis : ",end="")
+    print("Numero de la carte choisie : ",end="")
     c=input()
     while c.isdigit() and (int(c)<1 or int(c)>=len(tab)+1):
-        print("Chiffre invalide veuillez resaisir un chiffre :",end="")
+        print("Chiffre invalide veuillez ressaisir un chiffre :",end="")
         c=input()
     return tab[int(c)-1]
 
 def checkWinner(game):
     print("Victoire de ",end="")
     if game.player1.HP<=0:
-        print(game.player2.name,"\nVous avez reduis les point de vie de votre adversaire a 0")
+        print(game.player2.name,"\nVous avez reduit les points de vie de votre adversaire a 0")
         return
     if game.player2.HP<=0:
-        print(game.player1.name,"\nVous avez reduis les point de vie de votre adversaire a 0")
+        print(game.player1.name,"\nVous avez reduit les point de vie de votre adversaire a 0")
         return
     if len(game.player1.deck)==0:
         print(game.player2.name,"\nLe deck de votre adversaire ne contient plus de carte")

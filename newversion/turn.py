@@ -38,25 +38,25 @@ def turn(game):
         if player.HP < 0 or adv.HP < 0:
             return -1
         ecran(game)
-        print("\nChoissisez une option :\n1 - Jouer une carte\n2 - Attaquer avec un monstre\n3 - Voir les informations d'une carte\n4 - Terminer votre tour\n5 - Terminer votre tour et sauvegarder la partie")
+        print("\nChoisissez une option :\n1 - Jouer une carte\n2 - Attaquer avec un monstre\n3 - Voir les informations d'une carte\n4 - Terminer votre tour\n5 - Terminer votre tour et sauvegarder la partie")
         a = input()
         if a == "1":
-            print("Choisisez la carte a jouer :")
+            print("Choisissez la carte a jouer :")
             n = utility.findNumber(player.hand, utility.chooser(player.hand))
             utility.play(game, n)
         elif a == "2":
             b = e = -1
-            print("Choisisez le monstre attaquant :")
+            print("Choisissez le monstre attaquant :")
             b = utility.findNumber(player.board, utility.chooser(player.board))
             if len(adv.board) > 0:
-                print("Choisisez le monstre attaquer :")
+                print("Choisissez le monstre attaquer :")
                 e = utility.findNumber(adv.board, utility.chooser(adv.board))
             utility.attack(game, b, e)
         elif a == "3":
             print("Position de la carte voulu :\n1 - Main\n2 - Terrain")
             b = input()
             while b != "1" and b != "2":
-                print("Saisie invalide, veuillez recommancer : ")
+                print("Saisie invalide, veuillez recommencer : ")
                 b = input()
             if b == "1":
                 b = player.hand

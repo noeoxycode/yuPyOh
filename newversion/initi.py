@@ -13,7 +13,7 @@ def run():
         game.player1.deck=utility.shuffle(game.player1.deck)
         game.player2.deck=utility.shuffle(game.player2.deck)
         start(game)
-        print("Debut de la partie")
+        print("Début de la partie")
     elif mode==2:
         utility.holdingPlayer(game)
         print("Reprise de la partie")
@@ -48,7 +48,7 @@ def menu():
     print("                 YuPyOh\n")
     print("Bienvenue dans le jeu de carte original YuPyOh")
     while option != "1" and option != "4":
-        print("\nVeuillez selectionner une option :\n1 - Commencer une partie\n2 - Voir les deck disponible\n3 - Explication\n4 - Charger une partie\n5 - Quitter")
+        print("\nVeuillez selectionner une option :\n1 - Commencer une partie\n2 - Voir les decks disponibles\n3 - Explication\n4 - Charger une partie\n5 - Quitter")
         option = input("Choix : ")
         if option == "1":
             return initGame(), 1
