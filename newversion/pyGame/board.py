@@ -6,12 +6,12 @@ from Game import Game
 from Player import Player
 
 
-def displayBoard(game: Game, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight):
-	displayPlayer1(game.player1, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight)
-	displayPlayer2(game.player2, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight)
+def displayBoard(game: Game, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight):
+	displayPlayer1(game.player1, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight)
+	displayPlayer2(game.player2, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight)
 
 
-def displayPlayer1(player: Player, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight):
+def displayPlayer1(player: Player, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight):
 	green = (0, 255, 0)
 	blue = (0, 0, 128)
 	fontBig = pygame.font.Font('freesansbold.ttf', 32)
@@ -109,7 +109,7 @@ def displayPlayer1(player: Player, backCard, mapSize, black, surface, color, scr
 		screen.blit(backCard, player1GraveYard)
 
 
-def displayPlayer2(player, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight):
+def displayPlayer2(player, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight):
 	green = (0, 255, 0)
 	blue = (0, 0, 128)
 	oui = pygame.font.Font('freesansbold.ttf', 32)
@@ -214,19 +214,17 @@ def display(game):
 	nbCartesLigne = 6
 	nbCartesColonne = 2
 	backCard = pygame.transform.scale(backCard, (cardl, cardL))
-	screenWidht = cardl * 6 + (nbCartesLigne + 1)*padding
+	screenWidht = 1500
 	screenHeight = cardL * 2 + (nbCartesColonne + 1)*padding + 100
 	print(screenHeight)
 	mapSize = width, height = screenWidht, screenHeight
 
 	black = 0, 0, 0
-	surface = pygame.display.set_mode((500, 500))
 	color = (255, 0, 0)
 	screen = pygame.display.set_mode(mapSize)
-	print("toto")
-	displayBoard(game, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight)
+	displayBoard(game, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight)
 	screen.fill(black)
-	displayBoard(game, backCard, mapSize, black, surface, color, screen, cardl, cardL, screenWidht, screenHeight)
+	displayBoard(game, backCard, mapSize, black, color, screen, cardl, cardL, screenWidht, screenHeight)
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			sys.exit()
