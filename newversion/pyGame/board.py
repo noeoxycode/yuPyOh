@@ -112,6 +112,6 @@ def display(game):
 				pos = pygame.mouse.get_pos()
 				# clicked_sprites = [s for s in sprites if s.rect.collidepoint(pos)]
 				print(pos)
-
+		turn
 		pygame.display.flip()
 
