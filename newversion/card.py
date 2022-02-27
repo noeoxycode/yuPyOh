@@ -6,7 +6,6 @@ class Card:
 		self.effect = effect
 		self.effectInt = effectInt
 		self.image = pygame.image.load("image/" + name + ".png")
-		self.image = pygame.transform.smoothscale(self.image, (225, 300))
 		self.holder = None
 
 

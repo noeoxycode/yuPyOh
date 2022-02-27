@@ -35,7 +35,7 @@ def turn(game):
     utility.draw(player, 1)
     while a != "4" and a != "5":
         board.display(game)
-        if player.HP < 0 or adv.HP < 0:
+        if player.HP <= 0 or adv.HP <= 0:
             return -1
         ecran(game)
         print("\nChoissisez une option :\n1 - Jouer une carte\n2 - Attaquer avec un monstre\n3 - Voir les informations d'une carte\n4 - Terminer votre tour\n5 - Terminer votre tour et sauvegarder la partie")
