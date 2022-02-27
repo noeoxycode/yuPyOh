@@ -35,15 +35,22 @@ def turn(game):
     utility.draw(player, 1)
     while a != "4" and a != "5":
         board.display(game)
-        if player.HP < 0 or adv.HP < 0:
+        if player.HP <= 0 or adv.HP <= 0:
             return -1
         ecran(game)
         print("\nChoissisez une option :\n1 - Jouer une carte\n2 - Attaquer avec un monstre\n3 - Voir les informations d'une carte\n4 - Terminer votre tour\n5 - Terminer votre tour et sauvegarder la partie")
         a = input()
         if a == "1":
             print("Choisisez la carte a jouer :")
-            n = utility.findNumber(player.hand, utility.chooser(player.hand))
-            utility.play(game, n)
+            cardi=utility.chooser(player.hand)
+            cardi.printi()
+            res=0
+            while res!="o"and res!="n"and res!="O" and res!="N":
+                print("Voulez vous jouer cette carte :\no : oui\nn : non")
+                res=input()
+            if res =="o"or res=="O":
+                n = utility.findNumber(player.hand, cardi)
+                utility.play(game, n)
         elif a == "2":
             b = e = -1
             print("Choisisez le monstre attaquant :")

@@ -21,7 +21,15 @@ def run():
     while result!=-1 and result !=2:
         result=turn.turn(game)
         if result==2:
-            save.sauvegarde(game)
+            name=''
+            listName=data.saveList()
+            while name=='' or name in listName:
+                name=input("Saisissez un nom pour la sauvegarde : ")
+                if name=='' or name in listName:
+                    print("Nom deja existant : ")
+                    for i in listName:
+                        print(i)
+            save.sauvegarde(game,name)
     if result==-1:utility.checkWinner(game)
 
 def start(game):
@@ -57,7 +65,8 @@ def menu():
         elif option == "3":
             showExplication()
         elif option == "4":
-            return save.load(), 2
+            name=save.loadSave()
+            return save.load(name), 2
         elif option == "5":
             return -1, -1
 
@@ -80,7 +89,8 @@ def initGame():
 def showDeck():
     with open("decklist.txt") as f:
         contenu = f.read()
-    print("Deck disponible dans le jeu :\n", contenu, sep="")
+    contenu=contenu.split(".&.")
+    print("Deck disponible dans le jeu :\n", contenu[1], sep="")
 
 def showExplication():
     with open("explication.txt") as f:
@@ -102,12 +112,12 @@ def chargingDeck(deckName):
 
 
 def selectPlayer(HP=8000):
-    selection = 0
+    list_deck = data.deckList()
+    selection = len(list_deck)+1
     print("Nom du joueur : ", end="")
     name = input()
-    list_deck = data.deckList()
     nbr_list = len(list_deck)
-    while selection > nbr_list-1:
+    while selection > nbr_list:
         print("Selectionner votre deck :")
         for i in range(nbr_list):
             print(i + 1, "-", list_deck[i])

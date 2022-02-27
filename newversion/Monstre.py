@@ -25,7 +25,6 @@ class Monstre(Card):
         self.bLevel=int(tab[6])
     def printi(self):
         print("Monstre :",self.name)
-        print("Holder :",self.holder)
         print("LVL :",self.level,"Type :",self.types)
         print("ATK :",self.attack,"  DEF :",self.defence,)
         if self.attack != self.bAttack or self.defence != self.bDefence:

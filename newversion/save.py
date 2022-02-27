@@ -1,9 +1,12 @@
 from Magie import Magie
 from Monstre import Monstre
 from Game import Game
-import utility
-def sauvegarde(game):
-    file=open("save.csv","w")
+import utility,data
+def sauvegarde(game,name):
+    file=open("save.csv","a")
+    file.write(".azertyuiop.\n")
+    file.write(name+"\n")
+    file.write(".!.\n")
     file.write(str(game.turn)+";"+str(game.nbTurn)+"\n")
     file.write(game.player1.name+";"+str(game.player1.HP)+";"+game.player2.name+";"+str(game.player2.HP)+"\n")
     file.write(".!.\n")    
@@ -15,6 +18,24 @@ def sauvegarde(game):
     cardWrite(file,game.player2.hand)
     cardWrite(file,game.player2.board)
     cardWrite(file,game.player2.defause)
+    file.close()
+    addSaveName(name)
+
+def addSaveName(name):
+    with open("decklist.txt") as file:
+        contenu=file.read()
+    contenu=contenu.split(".&.")
+    if ">.>" in contenu[0]:
+        contenu[0]=contenu[0].split(">.>")
+    contenu[0].append(name)
+    file=open("decklist.txt","w")
+    for i in contenu[0]:
+        if i!= contenu[0][0]:
+            file.write(">.>")
+        file.write(i)
+    file.write(".&.")
+    file.write(contenu[1])
+    file.close()
 
 def cardWrite(file,zone):
     for i in zone:
@@ -27,25 +48,31 @@ def cardWrite(file,zone):
             file.write("\n")
     file.write(".!.\n")
 
-def load():
+def load(name):
+    save=0
     with open("save.csv") as file:
         contenu=file.read()
-    contenu=contenu.split(".!.\n")
+    contenu=contenu.split(".azertyuiop.\n")
     for i in range(len(contenu)):
-        contenu[i]=contenu[i].split("\n")
-    for i in range(len(contenu)):
-        for j in range(len(contenu[i])):
-            contenu[i][j]=contenu[i][j].split(";")
+        contenu[i]=contenu[i].split(".!.\n")
+    for i in contenu:
+        if i[0]==name+"\n":
+            save=i[1:]
+    for i in range(len(save)):
+        save[i]=save[i].split("\n")
+    for i in range(len(save)):
+        for j in range(len(save[i])):
+            save[i][j]=save[i][j].split(";")
     game=Game
-    game.turn=int(contenu[0][0][0])
-    game.nbTurn=int(contenu[0][0][1])
-    game.player1.name=contenu[0][1][0]
-    game.player1.HP=int(contenu[0][1][1])
-    game.player2.name=contenu[0][1][2]
-    game.player2.HP=int(contenu[0][1][3])
-    utility.popi(contenu)
-    loadPLayer(game.player1,contenu)
-    loadPLayer(game.player2,contenu)
+    game.turn=int(save[0][0][0])
+    game.nbTurn=int(save[0][0][1])
+    game.player1.name=save[0][1][0]
+    game.player1.HP=int(save[0][1][1])
+    game.player2.name=save[0][1][2]
+    game.player2.HP=int(save[0][1][3])
+    utility.popi(save)
+    loadPLayer(game.player1,save)
+    loadPLayer(game.player2,save)
     return game
 
 def loadPLayer(player,contenu):
@@ -62,3 +89,14 @@ def loadCard(tab,contenu):
                 tab.append(Magie(i[1:]))
             elif i[0]=="Monstre":
                 tab.append(Monstre(i[1:]))
+
+def loadSave():
+    print("Sauvegarde disponible :")
+    contenu=data.saveList()
+    for i in range(len(contenu)):
+        print(i+1," : ",contenu[i])
+    num='0'
+    while num>str(len(contenu)) or num<=str(0):
+        num=input("Choix :")
+    return contenu[int(num)-1]
+    

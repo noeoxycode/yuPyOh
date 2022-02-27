@@ -6,6 +6,5 @@ class Magie(Card):
     def printi(self):
         print("Magie :",self.name)
         print("Effet :",self.effect)
-        print(self.holder)
     def copy(self):
         return Magie(self.name,self.effect,self.effectInt)
