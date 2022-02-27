@@ -2,6 +2,10 @@ from Magie import Magie
 from Monstre import Monstre
 import utility
 from colorama import Fore
+
+from newversion.pyGame.board import displayBoard, display
+
+
 def ecran(game):
     print("-----------------------------------------------------\n")
     print(game.player2.name,str(game.player2.HP),"HP\nmain 2: ",end="")
@@ -30,6 +34,7 @@ def turn(game):
         return -1
     utility.draw(player,1)
     while a!="4" and a!="5":
+        display(game)
         if player.HP<0 or adv.HP<0:
             return -1
         ecran(game)
