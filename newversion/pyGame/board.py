@@ -14,12 +14,12 @@ def displayBoard(game: Game,backCard,mapSize,black,surface,color,screen):
 
 
 def displayPlayer1(player: Player,backCard,mapSize,black,surface,color,screen):
-	player1Monster1 = pygame.Rect(10, 10, 150, 200)
-	player1Monster2 = pygame.Rect(170, 10, 150, 200)
-	player1Monster3 = pygame.Rect(330, 10, 150, 200)
-	player1Monster4 = pygame.Rect(490, 10, 150, 200)
-	player1Monster5 = pygame.Rect(650, 10, 150, 200)
-	player1GraveYard = pygame.Rect(810, 10, 150, 200)
+	player1Monster1 = pygame.Rect(10, 220, 150, 200)
+	player1Monster2 = pygame.Rect(170, 220, 150, 200)
+	player1Monster3 = pygame.Rect(330, 220, 150, 200)
+	player1Monster4 = pygame.Rect(490, 220, 150, 200)
+	player1Monster5 = pygame.Rect(650, 220, 150, 200)
+	player1GraveYard = pygame.Rect(810, 220, 150, 200)
 	pygame.draw.rect(screen, color, player1Monster1)
 	pygame.draw.rect(screen, color, player1Monster2)
 	pygame.draw.rect(screen, color, player1Monster3)
@@ -54,12 +54,12 @@ def displayPlayer1(player: Player,backCard,mapSize,black,surface,color,screen):
 
 
 def displayPlayer2(player,backCard,mapSize,black,surface,color,screen):
-	player2Monster1 = pygame.Rect(10, 220, 150, 200)
-	player2Monster2 = pygame.Rect(170, 220, 150, 200)
-	player2Monster3 = pygame.Rect(330, 220, 150, 200)
-	player2Monster4 = pygame.Rect(490, 220, 150, 200)
-	player2Monster5 = pygame.Rect(650, 220, 150, 200)
-	player2GraveYard = pygame.Rect(810, 220, 150, 200)
+	player2Monster1 = pygame.Rect(10, 10, 150, 200)
+	player2Monster2 = pygame.Rect(170, 10, 150, 200)
+	player2Monster3 = pygame.Rect(330, 10, 150, 200)
+	player2Monster4 = pygame.Rect(490, 10, 150, 200)
+	player2Monster5 = pygame.Rect(650, 10, 150, 200)
+	player2GraveYard = pygame.Rect(810, 10, 150, 200)
 	pygame.draw.rect(screen, color, player2Monster1)
 	pygame.draw.rect(screen, color, player2Monster2)
 	pygame.draw.rect(screen, color, player2Monster3)
@@ -102,16 +102,14 @@ def display(game):
 	screen = pygame.display.set_mode(mapSize)
 	print("toto")
 	displayBoard(game,backCard,mapSize,black,surface,color,screen)
-	while 1:
-		screen.fill(black)
-		displayBoard(game,backCard,mapSize,black,surface,color,screen)
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				sys.exit()
-			elif event.type == pygame.MOUSEBUTTONUP:
-				pos = pygame.mouse.get_pos()
-				# clicked_sprites = [s for s in sprites if s.rect.collidepoint(pos)]
-				print(pos)
-		turn
-		pygame.display.flip()
+	screen.fill(black)
+	displayBoard(game,backCard,mapSize,black,surface,color,screen)
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			sys.exit()
+		elif event.type == pygame.MOUSEBUTTONUP:
+			pos = pygame.mouse.get_pos()
+			# clicked_sprites = [s for s in sprites if s.rect.collidepoint(pos)]
+			print(pos)
+	pygame.display.flip()
 
