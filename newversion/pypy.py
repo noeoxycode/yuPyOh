@@ -1,3 +1,4 @@
+import pygame
 from colorama import init
 import initi
 
@@ -6,4 +7,5 @@ def main():
 
 if __name__ == "__main__":
     init(autoreset=True)
+    pygame.init()
     main()
