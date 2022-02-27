@@ -3,7 +3,7 @@ from Monstre import Monstre
 import utility
 from colorama import Fore
 
-from newversion.pyGame.board import displayBoard, display
+import pyGame.board as board
 
 
 def ecran(game):
@@ -34,7 +34,7 @@ def turn(game):
         return -1
     utility.draw(player,1)
     while a!="4" and a!="5":
-        display(game)
+        board.display(game)
         if player.HP<0 or adv.HP<0:
             return -1
         ecran(game)

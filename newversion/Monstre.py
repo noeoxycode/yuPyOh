@@ -9,12 +9,6 @@ class Monstre(Card):
     level=0
     bLevel=0
     canAttack=True
-    def __init__(self, name="",attack=0,defence=0,level=0,types="",effect="",effectInt=""):
-        super().__init__(0, 0, name, types, effect, effectInt)
-        self.attack = self.bAttack=attack
-        self.bDefence=self.defence = defence
-        self.level = self.bLevel=level
-        self.effect = effect
     def __init__(self, tab):
         if(len(tab))>8:
             effect =tab[8]
@@ -22,7 +16,7 @@ class Monstre(Card):
         else:
             effect=''
             effectInt=''
-        super().__init__(0, 0, tab[0], tab[7], effect, effectInt)
+        super().__init__(tab[0], tab[7], effect, effectInt)
         self.attack =int(tab[1])
         self.defence = int(tab[2])
         self.level=int(tab[3])

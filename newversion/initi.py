@@ -3,18 +3,17 @@ from Player import Player
 from Game import Game
 from Monstre import Monstre
 from Magie import Magie
-import utility,data,save,turn,initi
-from newversion.pyGame.mainPyGame import displayGame
+import utility,data,save,turn
 
 
 def run():
     print("coucoucoucoucoucoucocuocucoucou")
-    game,mode=initi.menu()
+    game,mode=menu()
     if mode==-1: return -1
     if mode==1:
         game.player1.deck=utility.shuffle(game.player1.deck)
         game.player2.deck=utility.shuffle(game.player2.deck)
-        initi.start(game)
+        start(game)
         print("Debut de la partie")
     elif mode==2:
         utility.holdingPlayer(game)

@@ -1,8 +1,7 @@
 import sys, pygame
 
-import sprites as sprites
 
-from game import Game, Player
+from Game import Game
 
 pygame.init()
 
@@ -13,7 +12,7 @@ y = 10
 color = (255, 0, 0)
 screen = pygame.display.set_mode(mapSize)
 
-backCard = pygame.image.load("backCard.png")
+backCard = pygame.image.load("pyGame/backCard.png")
 backCard = pygame.transform.scale(backCard, (150, 200))
 
 
