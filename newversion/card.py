@@ -1,5 +1,4 @@
 import pygame
-
 class Card:
 	def __init__(self, name, types, effect, effectInt):
 		self.name = name
@@ -7,7 +6,7 @@ class Card:
 		self.effect = effect
 		self.effectInt = effectInt
 		self.image = pygame.image.load("image/" + name + ".png")
-		self.image = pygame.transform.scale(self.image, (150, 200))
+		self.image = pygame.transform.smoothscale(self.image, (150, 200))
 		self.holder = None
 
 

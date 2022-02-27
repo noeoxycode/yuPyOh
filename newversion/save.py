@@ -49,7 +49,6 @@ def load():
     return game
 
 def loadPLayer(player,contenu):
-    print(contenu)
     loadCard(player.deck,contenu[0])
     loadCard(player.hand,contenu[1])
     loadCard(player.board,contenu[2])
