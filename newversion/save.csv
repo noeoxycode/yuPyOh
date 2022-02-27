@@ -29,8 +29,8 @@ Magie;Appel d'urgence;Pioche 1 carte si c'est un monstre guerrier pioche une car
 Monstre;Blazeman;1600;1600;4;1600;1600;4;Guerrier
 Monstre;Chevalier Neos;2700;2300;7;2700;2300;7;Guerrier;Choisi un monstre ennemie, divise son ATK par 2;CHOOSE ennemie.board DIVIDEA target
 Magie;Prison heroique;Choisisez un monstre ennemie, il pert un montant d'ATK egal a 100 x son niveau;CHOOSE ennemie.board MINUSA* target 100 target.LVL
-Monstre;Neos;2500;2200;7;2500;2200;7;Guerrier
 .!.
+Monstre;Neos;2500;2200;7;2500;2200;7;Guerrier
 .!.
 Magie;Super blocage;Choisisez un monstre guerrier que vous controlez, il gagne 800 DEF;CHOOSE allie.board.Guerrier BOOSTD target 800
 Monstre;Capitaine doree;1800;1000;1000;1800;1000;4;Guerrier;Pioche une carte;DRAW 1

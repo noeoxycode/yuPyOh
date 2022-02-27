@@ -8,18 +8,12 @@ from Player import Player
 
 
 
-def displayBoard(game: Game):
-	displayPlayer1(game.player1)
-	displayPlayer2(game.player2)
+def displayBoard(game: Game,backCard,mapSize,black,surface,color,screen):
+	displayPlayer1(game.player1,backCard,mapSize,black,surface,color,screen)
+	displayPlayer2(game.player2,backCard,mapSize,black,surface,color,screen)
 
 
-def displayPlayer1(player: Player):
-	backCard = pygame.image.load("pyGame/monster.jpg")
-	mapSize = width, height = 970, 800
-	black = 0, 0, 0
-	surface = pygame.display.set_mode((500, 500))
-	color = (255, 0, 0)
-	screen = pygame.display.set_mode(mapSize)
+def displayPlayer1(player: Player,backCard,mapSize,black,surface,color,screen):
 	player1Monster1 = pygame.Rect(10, 10, 150, 200)
 	player1Monster2 = pygame.Rect(170, 10, 150, 200)
 	player1Monster3 = pygame.Rect(330, 10, 150, 200)
@@ -59,13 +53,7 @@ def displayPlayer1(player: Player):
 		screen.blit(backCard, player1GraveYard)
 
 
-def displayPlayer2(player):
-	backCard = pygame.image.load("pyGame/monster.jpg")
-	mapSize = width, height = 970, 800
-	black = 0, 0, 0
-	surface = pygame.display.set_mode((500, 500))
-	color = (255, 0, 0)
-	screen = pygame.display.set_mode(mapSize)
+def displayPlayer2(player,backCard,mapSize,black,surface,color,screen):
 	player2Monster1 = pygame.Rect(10, 220, 150, 200)
 	player2Monster2 = pygame.Rect(170, 220, 150, 200)
 	player2Monster3 = pygame.Rect(330, 220, 150, 200)
@@ -105,15 +93,18 @@ def displayPlayer2(player):
 		screen.blit(backCard, player2GraveYard)
 
 def display(game):
-	backCard = pygame.image.load("pyGame/monster.jpg")
-	mapSize = width, height = 970, 800
+	backCard = pygame.image.load("pyGame/backCard.png")
+	backCard = pygame.transform.scale(backCard, (150, 200))	
+	mapSize = width, height = 700, 600
 	black = 0, 0, 0
 	surface = pygame.display.set_mode((500, 500))
 	color = (255, 0, 0)
 	screen = pygame.display.set_mode(mapSize)
 	print("toto")
-	displayBoard(game)
+	displayBoard(game,backCard,mapSize,black,surface,color,screen)
 	while 1:
+		screen.fill(black)
+		displayBoard(game,backCard,mapSize,black,surface,color,screen)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				sys.exit()
@@ -122,6 +113,5 @@ def display(game):
 				# clicked_sprites = [s for s in sprites if s.rect.collidepoint(pos)]
 				print(pos)
 
-		screen.fill(black)
 		pygame.display.flip()
 
